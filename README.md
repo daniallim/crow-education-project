@@ -129,4 +129,4 @@ By giving every student the chance to learn freely and every teacher the power t
 
 ### 📘 “Education for Everyone, Everywhere.”
 
-_© 2025 Crow Education Team — Hackathon Project_
+_© 2025 Crow Education Bird2 Team — Hackathon Project_
