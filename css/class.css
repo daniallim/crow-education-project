@@ -1,0 +1,706 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: sans-serif;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .page {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(52, 152, 219, 0.1);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg);
+                opacity: 0.7;
+            }
+        }
+
+        .class-container {
+            max-width: 900px;
+            margin: left 0;
+            margin-right:auto;
+            padding: 40px 20px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .box {
+            margin-top: 30px;
+        }
+
+        .class-title-container {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 15px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.15);
+            width: fit-content;
+            transition: all 0.3s ease;
+            border-left: 8px solid #3498db;
+            margin-bottom: 40px;
+        }
+
+        .class-title-container i {
+            color: #3498db;
+            font-size: 28px;
+            margin-right: 12px;
+        }
+
+        .class-title-container span {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .teacher-card {
+            display: flex;
+            align-items: 15px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+            border-left: 8px solid transparent;
+            padding: 15px 500px;
+            margin-bottom: 15px;
+            transition: all 0.2s ease;
+            border-style: outset;
+            width: 100%;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .teacher-card:hover {
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.15);
+            border-left: 8px solid #3498db;
+            transform: translateY(-5px);
+        }
+
+        .teacher-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: -480px;
+            flex-shrink: 0;
+            border: 3px solid #3498db;
+        }
+
+        .teacher-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .teacher-info{
+            margin-left: 50px;
+        }
+
+        .teacher-info h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #2c3e50;
+            font-weight: 800;
+        }
+
+        .teacher-info p {
+            margin: 2px 0 0;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 80px;
+            right: 25px;
+            background: #ffffff;
+            padding: 15px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.15);
+            border-left: 8px solid #3498db;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
+        }
+
+        .content {
+            text-align: center;
+            padding: 40px 30px 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .nav-button {
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: "Poppins", sans-serif;
+            color: #2c3e50;
+            background-color: #ffffff;
+            border: 2px solid #ecf0f1;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            min-width: 160px;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            background-color: #ecf0f1;
+            color: #3498db;
+            border-color: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .post-container {
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .post-card {
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.15);
+            border: 1px solid rgba(52, 152, 219, 0.2);
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            text-align: left;
+            width: 100%;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .post-header .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .post-header .username {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .post-body {
+            margin-left: 62px;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .post-attachment {
+            margin-left: 62px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #2c3e50;
+        }
+
+        .file-info i {
+            font-size: 1.8rem;
+            color: #3498db;
+        }
+
+        .file-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.5rem;
+            color: #7f8c8d;
+        }
+
+        .file-actions i {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-actions i:hover {
+            color: #3498db;
+        }
+
+        .video-container {
+            margin-left: 62px;
+            margin-top: 15px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: #000;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .video-wrapper:hover .video-controls {
+            opacity: 1;
+        }
+
+        .video-duration {
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .video-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .video-actions i {
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .video-actions i:hover {
+            color: #3498db;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .teacher-card {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+            }
+
+            .teacher-avatar {
+                width: 50px;
+                height: 50px;
+            }
+
+            .content {
+                padding: 40px 20px 20px;
+            }
+
+            .button-container {
+                gap: 15px;
+            }
+
+            .nav-button {
+                padding: 12px 25px;
+                font-size: 16px;
+                min-width: 140px;
+            }
+
+            .video-container {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-button {
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+                min-width: auto;
+            }
+
+            .post-card {
+                padding: 15px;
+            }
+
+            .post-body,
+            .post-attachment,
+            .video-container {
+                margin-left: 0;
+            }
+
+            .post-attachment {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .file-info {
+                flex-basis: 100%;
+            }
+
+            .file-actions {
+                flex-basis: 100%;
+                justify-content: flex-end;
+            }
+
+            /* --- MODIFIED: Responsive Inline Form --- */
+            .submission-section {
+                margin-left: 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .inline-submission-area {
+                width: 100%;
+            }
+        }
+
+        /* --- CSS FOR ACTIVE BUTTON --- */
+        .nav-button.active {
+            background-color: #3498db;
+            color: #ffffff;
+            border-color: #3498db;
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        /* --- MODIFIED: Submission Section Styles --- */
+        .submission-section {
+            margin-left: 62px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            /* --- NEW: Added for inline form --- */
+            flex-wrap: wrap;
+        }
+
+        .submit-homework-button {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #3498db;
+            /* Blue */
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .submit-homework-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .submit-homework-button.submitted {
+            background-color: #2ecc71;
+            /* Green */
+            color: white;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .submit-homework-button .fa-chevron-down,
+        .submit-homework-button.active .fa-chevron-up {
+            font-size: 12px;
+        }
+
+        .submission-status-text {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* --- NEW: Inline Submission Area Styles --- */
+        .inline-submission-area {
+            width: 100%;
+            /* Hidden by default */
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-out;
+            margin-top: 10px;
+            padding: 15px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 10px;
+        }
+
+        .inline-submission-area.active {
+            /* Shown when active */
+            max-height: 250px;
+            /* Make sure this is tall enough */
+            opacity: 1;
+            margin-top: 15px;
+        }
+
+        .file-upload-area-inline {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .file-input-hidden-inline {
+            display: none;
+        }
+
+        .file-input-label-inline {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ecf0f1;
+            color: #34495e;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .file-input-label-inline:hover {
+            background: #dfe6e9;
+        }
+
+        .file-input-label-inline i {
+            margin-right: 8px;
+        }
+
+        .file-name-display-inline {
+            display: block;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #777;
+            font-style: italic;
+        }
+
+        .modal-button-submit-inline {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #2ecc71;
+            /* Green */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-button-submit-inline:hover {
+            background-color: #27ae60;
+        }
+
+        /* ========================================
+   THEME SELECTOR STYLES - Index 版本
+======================================== */
+
+.theme-selector {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.theme-selector.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.theme-options-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.theme-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.theme-option:hover {
+    transform: scale(1.1);
+}
+
+.theme-option.active {
+    border: 2px solid var(--dark);
+    transform: scale(1.1);
+}
+
+/* ========================================
+   THEME COLOR CLASSES - 定义主题颜色
+======================================== */
+
+.theme-1 {
+    background: linear-gradient(45deg, #3498db, #2980b9) !important;
+}
+
+.theme-2 {
+    background: linear-gradient(45deg, #0984e3, #6c5ce7) !important;
+}
+
+.theme-3 {
+    background: linear-gradient(45deg, #00cec9, #00b894) !important;
+}
+
+.theme-4 {
+    background: linear-gradient(45deg, #74b9ff, #a29bfe) !important;
+}
+
+.theme-5 {
+    background: linear-gradient(45deg, #487eb0, #40739e) !important;
+}
+
+/* ========================================
+   AUTO THEME SECTION STYLES
+======================================== */
+
+.auto-theme-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.auto-theme-section:hover {
+    background: #d5dbdb;
+}
+
+.auto-theme-section.active {
+    background: var(--primary);
+    color: white;
+}
+
+.auto-theme-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.auto-theme-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gray);
+    transition: var(--transition);
+}
+
+.auto-theme-section.active .auto-theme-status {
+    background: white;
+}

@@ -1,0 +1,111 @@
+/* 侧边栏样式 */
+.sidebar {
+    width: 80px;
+    height: calc(100vh - 70px);
+    background-color: #ffffff;
+    border-right: 1px solid rgba(52, 152, 219, 0.2);
+    padding: 20px 0;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    transition: width 0.3s ease;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar:hover {
+    width: 280px;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 10px;
+}
+
+.sidebar ul::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar ul::-webkit-scrollbar-thumb {
+    background-color: rgba(52, 152, 219, 0.3);
+    border-radius: 5px;
+}
+
+.sidebar:not(:hover) ul::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--gray);
+    padding: 15px 0;
+    border-radius: 8px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--primary);
+}
+
+.sidebar .nav-link i {
+    font-size: 22px;
+    color: var(--gray);
+    min-width: 60px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.sidebar .nav-link:hover i,
+.sidebar .nav-link.active i {
+    color: var(--primary);
+}
+
+.sidebar .nav-link:hover i {
+    transform: scale(1.1);
+}
+
+.sidebar .item-text {
+    opacity: 0;
+    margin-left: 15px;
+    font-size: 16px;
+    transition: opacity 0.2s ease;
+    font-weight: 500;
+}
+
+.sidebar:hover .item-text {
+    opacity: 1;
+}
+
+/* 侧边栏与内容区域的交互 */
+.page-container {
+    display: flex;
+    padding-top: 70px;
+}
+
+.content {
+    margin-left: 80px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+    padding: 40px;
+    overflow-y: auto;
+    animation: fadeIn 0.8s ease;
+}
+
+.sidebar:hover ~ .content {
+    margin-left: 280px;
+}
