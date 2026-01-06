@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crow Education Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-footer {
+            background-color: #0d2c4a;
+            color: #dcdcdc;
+            padding: 40px 20px;
+            border-top: 1px solid #1f4b75;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            margin: 15px;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo i {
+            font-size: 24px;
+            color: #3498db;
+        }
+
+        .footer-logo span {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-column ul.normal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul.normal-list li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul.normal-list li a {
+            text-decoration: none;
+            color: #90b8d8;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul.normal-list li a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-column .toggle-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column .toggle-list li {
+            margin-bottom: 5px;
+        }
+
+        .footer-toggle {
+            background-color: transparent;
+            border: none;
+            padding: 5px 0;
+            margin: 0;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-family: inherit;
+            color: #ffffff;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-toggle:focus-visible {
+            outline: 2px solid #5dadec;
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .footer-toggle::before {
+            content: '>';
+            font-size: 16px;
+            font-weight: 700;
+            color: #90b8d8;
+            transition: transform 0.2s ease-in-out;
+            transform: rotate(0deg);
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .footer-toggle.active::before,
+        .footer-toggle[aria-expanded="true"]::before {
+            transform: rotate(90deg);
+        }
+
+        .footer-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-left: 30px;
+        }
+
+        .footer-panel a,
+        .footer-panel p,
+        .footer-panel em {
+            display: block;
+            margin: 8px 0;
+            color: #dcdcdc;
+        }
+
+        .footer-panel a {
+            text-decoration: underline;
+            color: #90b8d8;
+        }
+
+        .footer-panel a:hover {
+            color: #ffffff;
+        }
+
+        .footer-panel p {
+            margin: 5px 0;
+        }
+
+        .footer-panel em {
+            font-style: italic;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .last {
+            font-size: 14px;
+            color: #90b8d8;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-column {
+                width: 100%;
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <i class="fas fa-crow"></i>
+                    <span>Crow Education</span>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>[ABOUT]</h4>
+                <ul class="toggle-list">
+                    <li>
+                        <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="panel-about-us">
+                            About us
+                        </button>
+                        <div class="footer-panel" id="panel-about-us">
+                            <a href="aboutus.php">Bird2 Team</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="panel-contact">
+                            Contact us
+                        </button>
+                        <div class="footer-panel" id="panel-contact">
+                            <a href="mailto:birdbird945@gmail.com">birdbird945@gmail.com</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="panel-mission">
+                            Our Mission
+                        </button>
+                        <div class="footer-panel" id="panel-mission">
+                            <em>✨ To help students learn smarter.
+                                <div>💬 To support teachers in sharing knowledge.</div>
+                            <div>🌱 To make education easier — for everyone.</div>
+                        </em>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="footer-toggle" type="button" aria-expanded="false" aria-controls="panel-slogan">
+                            Slogan
+                        </button>
+                        <div class="footer-panel" id="panel-slogan">
+                            <em>Grow with us, Glow your future</em>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>[LEARN]</h4>
+                <ul class="normal-list">
+                    <li><a href="class.php">Class</a></li>
+                    <li><a href="community.php">Discussion Hub</a></li>
+                    <li><a href="course.php">Subject Finder</a></li>
+                    <li><a href="knowledge.php">Knowledge Hub</a></li>
+                    <li><a href="method.php">Study Method</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>[HELP & SUPPORT]</h4>
+                <ul class="normal-list">
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScI6weOjfqifyidovKEBxIlf-kO_mN_RbXbwV0Wb_yF04m9tA/viewform?usp=dialog"target="_blank" 
+               rel="noopener noreferrer">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="last">© 2025 Crow Education EduTeach Platform · Teacher Dashboard</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggles = document.querySelectorAll(".footer-toggle");
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener("click", () => {
+                    
+                    const isExpanded = !toggle.classList.contains("active");
+                    
+                    toggle.classList.toggle("active", isExpanded);
+                    
+                    toggle.setAttribute("aria-expanded", isExpanded);
+                    
+                    const panel = toggle.nextElementSibling;
+                    if (panel) { 
+                        if (isExpanded) {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        } else {
+                            panel.style.maxHeight = null;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
