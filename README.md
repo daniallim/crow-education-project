@@ -42,7 +42,6 @@
     👆 <i>Click the image above to play the video</i>
   </p>
 </div>
----
 
 ## ✨ Key Features
 
