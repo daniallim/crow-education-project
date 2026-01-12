@@ -14,9 +14,8 @@
   <p align="center">
     <a href="#-project-overview">👀 Overview</a> •
     <a href="#-key-features">✨ Features</a> •
-    <a href="#-app-interface">📸 Screenshots</a> •
-    <a href="#-tech-stack">🛠️ Tech Stack</a> •
-    <a href="#-installation-guide">⚙️ Setup</a>
+    <a href="#-getting-started">🛠️ Installation</a> •
+    <a href="#-folder-structure">📂 Folder Structure</a>
   </p>
   
   <p align="center">
