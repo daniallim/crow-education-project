@@ -1,9 +1,4 @@
-<div align="center">
-  <a href="https://github.com/YOUR-USERNAME/crow-education">
-    <img src="https://via.placeholder.com/150/0f172a/ffffff?text=Crow+Logo" alt="Logo" width="120" height="120">
-  </a>
-
-  <h1 align="center">Crow Education</h1>
+ <h1 align="center">Crow Education</h1>
 
   <p align="center">
     <b>The Modern Learning Ecosystem for SPM Students</b>
